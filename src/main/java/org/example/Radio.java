@@ -1,8 +1,8 @@
 package org.example;
 
 public class Radio {
-    public int currentRadioStation;
-    public int currentSoundVolumeLevel;
+    private int currentRadioStation;
+    private int currentSoundVolumeLevel;
 
     public int getRadioStation() {
         return currentRadioStation;
@@ -11,8 +11,7 @@ public class Radio {
     public void nextRadioStation() {
         if (currentRadioStation < 9) {
             currentRadioStation = currentRadioStation + 1;
-        }
-        if (currentRadioStation == 9) {
+        } else  {
             currentRadioStation = 0;
         }
     }
@@ -20,8 +19,7 @@ public class Radio {
     public void prevRadioStation() {
         if (currentRadioStation > 0) {
             currentRadioStation = currentRadioStation - 1;
-        }
-        if (currentRadioStation == 0) {
+        } else  {
             currentRadioStation = 9;
         }
     }

@@ -31,6 +31,18 @@ class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+    @Test
+    public void shouldSetNextPenultimateRadioStation() {
+        Radio radio = new Radio();
+        radio.setRadioStation(8);
+        radio.nextRadioStation();
+
+        int expected = 9;
+        int actual = radio.getRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
 
     @Test
     public void shouldSetPrevFirstRadioStation() {
@@ -39,6 +51,18 @@ class RadioTest {
         radio.prevRadioStation();
 
         int expected = 9;
+        int actual = radio.getRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+    @Test
+    public void shouldSetPrevPenultimateRadioStation() {
+        Radio radio = new Radio();
+        radio.setRadioStation(1);
+        radio.prevRadioStation();
+
+        int expected = 0;
         int actual = radio.getRadioStation();
 
         Assertions.assertEquals(expected, actual);
@@ -105,6 +129,18 @@ class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+    @Test
+    public void shouldSetIncreasePenultimateSoundVolumeLevel() {
+        Radio radio = new Radio();
+
+        radio.setVolume(99);
+        radio.increaseVolume();
+        int expected = 100;
+        int actual = radio.getVolume();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
 
     @Test
     public void shouldSetDecreaseSoundVolumeLevel() {
@@ -113,6 +149,18 @@ class RadioTest {
         radio.setVolume(50);
         radio.decreaseVolume();
         int expected = 49;
+        int actual = radio.getVolume();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+    @Test
+    public void shouldSetDecreasePenultimateSoundVolumeLevel() {
+        Radio radio = new Radio();
+
+        radio.setVolume(1);
+        radio.decreaseVolume();
+        int expected = 0;
         int actual = radio.getVolume();
 
         Assertions.assertEquals(expected, actual);
