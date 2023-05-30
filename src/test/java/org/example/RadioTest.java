@@ -205,6 +205,46 @@ class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+    
+
+    @Test
+    public void shouldSetCountRadioStation() {
+        Radio radio = new Radio(18);
+        radio.setRadioStation(10);
+        radio.nextRadioStation();
+
+        int expected = 11;
+        int actual = radio.getRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldSetNextCountRadioStation() {
+        Radio radio = new Radio(19);
+        radio.setRadioStation(18);
+        radio.nextRadioStation();
+
+        int expected = 0;
+        int actual = radio.getRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldSetPrevCountRadioStation() {
+        Radio radio = new Radio(12);
+        radio.setRadioStation(1);
+        radio.prevRadioStation();
+
+        int expected = 0;
+        int actual = radio.getRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
 
 
 }
