@@ -1,15 +1,26 @@
 package org.example;
 
 public class Radio {
+
     private int currentRadioStation;
     private int currentSoundVolumeLevel;
+    private int countRadioStation;
+
+    public  Radio(){
+        this.countRadioStation = 10 - 1;
+
+    }
+    public  Radio(int count){
+        this.countRadioStation = count - 1;
+
+    }
 
     public int getRadioStation() {
         return currentRadioStation;
     }
 
     public void nextRadioStation() {
-        if (currentRadioStation < 9) {
+        if (currentRadioStation < countRadioStation) {
             currentRadioStation = currentRadioStation + 1;
         } else  {
             currentRadioStation = 0;
@@ -20,12 +31,12 @@ public class Radio {
         if (currentRadioStation > 0) {
             currentRadioStation = currentRadioStation - 1;
         } else  {
-            currentRadioStation = 9;
+            currentRadioStation = countRadioStation;
         }
     }
 
     public void setRadioStation(int numRadioStation) {
-        if (numRadioStation > 9) {
+        if (numRadioStation > countRadioStation) {
             return;
         }
         if (numRadioStation < 0) {
