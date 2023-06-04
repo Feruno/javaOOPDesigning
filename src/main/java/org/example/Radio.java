@@ -1,11 +1,23 @@
 package org.example;
 
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
 public class Radio {
 
     private int currentRadioStation;
     private int currentSoundVolumeLevel;
     private int countRadioStation;
 
+
+
+    /*
     public  Radio(){
         this.countRadioStation = 10 - 1;
 
@@ -18,6 +30,7 @@ public class Radio {
     public int getRadioStation() {
         return currentRadioStation;
     }
+    */
 
     public void nextRadioStation() {
         if (currentRadioStation < countRadioStation) {
@@ -34,7 +47,7 @@ public class Radio {
             currentRadioStation = countRadioStation;
         }
     }
-
+    /*
     public void setRadioStation(int numRadioStation) {
         if (numRadioStation > countRadioStation) {
             return;
@@ -44,7 +57,7 @@ public class Radio {
         }
         currentRadioStation = numRadioStation;
     }
-
+    */
 
     public void increaseVolume() {
         if (currentSoundVolumeLevel < 100) {
@@ -57,7 +70,7 @@ public class Radio {
             currentSoundVolumeLevel = currentSoundVolumeLevel - 1;
         }
     }
-
+    /*
     public int getVolume() {
         return currentSoundVolumeLevel;
     }
@@ -73,4 +86,5 @@ public class Radio {
         }
         currentSoundVolumeLevel = Volume;
     }
+    */
 }
